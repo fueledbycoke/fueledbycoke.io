@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            position: relative;
+            margin: auto;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 1920px;
+            padding: 0px 20px;
+        }
+
+        /* Add a black background color to the top navigation */
+        .topnav {
+            background-color: #1D1D1D;
+            overflow: hidden;
+            border-radius: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: right;
+            background-image: url("./fromsoftware.png");
+            outline-color: white;
+            outline-style: solid;
+            outline-width: 0.5px;
+            transition: box-shadow 0.3s;
+            box-shadow: 0 0 0 0 black;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+
+        .topnav:hover {
+            box-shadow: 0 2px 10px 2px black;
+        }
+
+        .buttons:hover {
+            box-shadow: 0 2px 10px 2px black;
+        }
+
+        .title-box {
+            color: white;
+            display: flex;
+            background-color: #1D1D1D;
+            margin-top: 50px;
+            padding-top: 10px;
+            border-radius: 10px;
+            outline-color: white;
+            outline-width: 0.1px;
+            outline: auto;
+            box-shadow: 0 2px 10px 2px black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #696969;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: #505050;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .text-box {
+            color: white;
+            display: flex;
+            background-color: #1D1D1D;
+            margin-top: 50px;
+            padding-top: 10px;
+            border-radius: 10px;
+            outline-color: white;
+            outline-width: 0.1px;
+            outline: auto;
+            box-shadow: 0 2px 10px 2px black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        /* Add a black background color to the top navigation */
+        .buttons {
+            background-color: #1D1D1D;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            background-image: url("./fromsoftware.png");
+            outline-color: white;
+            outline-style: solid;
+            outline-width: 0.5px;
+            transition: box-shadow 0.3s;
+            box-shadow: 0 0 0 0 black;
+            margin: 20px 20px;
+            border-radius: 10px;
+        }
+
+        /* Style the links inside the navigation bar */
+        .buttons a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Change the color of links on hover */
+        .buttons a:hover {
+            background-color: #696969;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Add a color to the active/current link */
+        .buttons a.active {
+            background-color: #505050;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .text-box h2 {
+            width: 100%;
+        }
+
+        .text-box-subtitle {
+            color: white;
+            display: flex;
+            background-color: #1D1D1D;
+            border-radius: 10px;
+            outline-color: white;
+            outline-width: 0.1px;
+            outline: auto;
+            box-shadow: 0 2px 10px 2px black;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .souls-gif {
+            display: flex;
+            justify-content: center;
+            width: 60%;
+            margin: a;
+        }
+
+        .souls-gif img {
+            margin: 30px 40px;
+            width: 100%;
+            box-shadow: 0 2px 10px 2px black;
+            border-radius: 30px;
+            max-height: 600px;
+            margin-top: auto;
+            margin-bottom: auto;
+            max-width: 1000px;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url("./games.png");
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+
+        .game-box {
+            display: flex;
+            padding: 40px;
+        }
+
+        .game-box:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .game-box-text {
+            width: 40%;
+        }
+
+        @media only screen and (max-width: 1200px) {
+
+            .game-box {
+                flex-direction: column;
+            }
+
+            .game-box:nth-child(even) {
+            flex-direction: column;
+        }
+
+            .game-box-text {
+                width: 100%;
+            }
+
+            .souls-gif {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="topnav">
+            <a href="/index">Home</a>
+            <a class="active" href="/gamesinfo">Games</a>
+            <a href="/news">News</a>
+            <a href="#about">Contact</a>
+        </div>
+
+
+    <div class="title-box">
+        <h1>FROMSOFTWARE GAMES</h1>
+    </div>
+    <div class="buttons">
+
+        <a href="#demon-souls">Demon Souls</a>
+        <a href="#dark-souls">Dark Souls</a>
+        <a href="#dark-souls-2">Dark Souls 2</a>
+        <a href="#dark-souls-3">Dark Souls 3</a>
+        <a href="#bloodborne">Bloodbonre</a>
+        <a href="#Sekiro">Sekiro: SDT</a>
+        <a href="#elden-ring">Elden Ring</a>
+    </div>
+
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="demon-souls" class="text-box">
+                <h2>DEMON SOULS</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Demon's Souls is a 2020 action role-playing game developed by Bluepoint Games and published by Sony
+                    Interactive Entertainment for the PlayStation 5. The game was released as a launch title for the
+                    PlayStation 5 in November. It is a remake of Demon's Souls, originally developed by FromSoftware for
+                    the PlayStation 3 in 2009. Japan Studio assisted on its development, which makes Demon’s Souls its
+                    last game before its merger with Team Asobi. Demon's Souls received critical acclaim from critics,
+                    who praised its gameplay, visuals, technical aspects, and improvements over the original game. It
+                    sold over 1.4 million copies by September 2021.
+
+                    Demon's Souls is set in Boletaria, a kingdom consumed by a dark being called the Old One, following
+                    its release through the use of forbidden Soul Arts. Players take on the role of a hero brought to
+                    Boletaria to kill its fallen king Allant and pacify the Old One.</p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./Demon-Souls.gif" alt="Demon souls">
+        </div>
+    </div>
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="dark-souls" class="text-box">
+                <h2>DARK SOULS</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Dark Souls[a] is a series of action role-playing games created by Hidetaka Miyazaki of FromSoftware
+                    and published by Bandai Namco Entertainment. The series began with the release of Dark Souls (2011)
+                    and has seen two sequels, Dark Souls II (2014) and Dark Souls III (2016). Dark Souls has received
+                    critical acclaim, with the first title often cited as one of the greatest in video games, with the
+                    series as a whole being both praised and criticized for its high level of difficulty.
+
+                    The games take place within a dark, medieval fantasy setting, where the player's character fights
+                    against knights, dragons, phantoms, demons, and other monstrous or supernatural entities. The
+                    accretion, loss, and recovery of souls are central to the narrative and gameplay of Dark Souls
+                    games. </p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./Dark-Souls.gif" alt="dark souls">
+        </div>
+    </div>
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="dark-souls-2" class="text-box">
+                <h2>DARK SOULS 2</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Dark Souls[a] is a series of action role-playing games created by Hidetaka Miyazaki of FromSoftware
+                    and published by Bandai Namco Entertainment. The series began with the release of Dark Souls (2011)
+                    and has seen two sequels, Dark Souls II (2014) and Dark Souls III (2016). Dark Souls has received
+                    critical acclaim, with the first title often cited as one of the greatest in video games, with the
+                    series as a whole being both praised and criticized for its high level of difficulty.
+
+                    Dark Souls II[a] is an action role-playing video game developed by FromSoftware. The second main
+                    installment of the Dark Souls series, it was released for Windows, PlayStation 3 and Xbox 360 in
+                    March 2014 by FromSoftware in Japan and Bandai Namco Games internationally. Taking place in the
+                    kingdom of Drangleic, the game features both player versus environment (PvE) and player versus
+                    player (PvP) gameplay. Dark Souls II was released in March 2014 after some initial delays, with the
+                    Windows version being released the following month.
+
+                    Dark Souls II was a critical and commercial success. A remastered version of the game, titled Dark
+                    Souls II: Scholar of the First Sin, was released for PlayStation 3, PlayStation 4, Xbox 360, Xbox
+                    One, and Windows in April 2015. It contains the original game and its downloadable content with
+                    upgraded graphics, expanded online multiplayer capacity, and various other changes. A sequel, Dark
+                    Souls III, was released in 2016.</p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./giphy.gif" alt="dark souls">
+        </div>
+    </div>
+
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="dark-souls-3" class="text-box">
+                <h2>DARK SOULS 3</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Dark Souls[a] is a series of action role-playing games created by Hidetaka Miyazaki of FromSoftware
+                    and
+                    published by Bandai Namco Entertainment. The series began with the release of Dark Souls (2011) and
+                    has seen
+                    two sequels, Dark Souls II (2014) and Dark Souls III (2016). Dark Souls has received critical
+                    acclaim, with
+                    the first title often cited as one of the greatest in video games, with the series as a whole being
+                    both
+                    praised and criticized for its high level of difficulty.
+
+                    Dark Souls II[a] is an action role-playing video game developed by FromSoftware. The second main
+                    installment
+                    of the Dark Souls series, it was released for Windows, PlayStation 3 and Xbox 360 in March 2014 by
+                    FromSoftware in Japan and Bandai Namco Games internationally. Taking place in the kingdom of
+                    Drangleic, the
+                    game features both player versus environment (PvE) and player versus player (PvP) gameplay. Dark
+                    Souls II
+                    was released in March 2014 after some initial delays, with the Windows version being released the
+                    following
+                    month.
+
+                    Dark Souls II was a critical and commercial success. A remastered version of the game, titled Dark
+                    Souls II:
+                    Scholar of the First Sin, was released for PlayStation 3, PlayStation 4, Xbox 360, Xbox One, and
+                    Windows in
+                    April 2015. It contains the original game and its downloadable content with upgraded graphics,
+                    expanded
+                    online multiplayer capacity, and various other changes. A sequel, Dark Souls III, was released in
+                    2016.</p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./dark-souls-three.gif" alt="Demon souls">
+        </div>
+    </div>
+
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="bloodborne" class="text-box">
+                <h2>BLOODBORNE</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Bloodborne[b] is a 2015 action role-playing game developed by FromSoftware and published by Sony
+                    Computer
+                    Entertainment for the PlayStation 4. Bloodborne follows the player's character, a Hunter, through
+                    the
+                    decrepit Gothic, Victorian-era–inspired city of Yharnam, whose inhabitants are afflicted with a
+                    blood-borne
+                    disease which transforms the residents, called Yharnamites, into horrific beasts. Attempting to find
+                    the
+                    source of the plague, the player's character unravels the city's mysteries while fighting beasts and
+                    cosmic
+                    beings.
+
+                    The game is played from a third-person perspective. Players control a customizable protagonist, and
+                    the
+                    gameplay is focused on strategic weapons-based combat and exploration. Players battle varied enemies
+                    while
+                    using items such as trick weapons and firearms, exploring different locations, interacting with
+                    non-player
+                    characters, and unraveling the city's mysteries. Bloodborne began development in 2012 under the
+                    working
+                    title of Project Beast. Bearing many similarities to FromSoftware's Dark Souls series, Bloodborne
+                    was
+                    inspired by the literary works of authors H. P. Lovecraft and Bram Stoker and the architectural
+                    design of
+                    real-world locations in countries such as Romania and Czechia.
+
+                </p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./bloodborne.gif" alt="Demon souls">
+        </div>
+    </div>
+
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="Sekiro" class="text-box">
+                <h2>SEKIRO: SHADOWS DIE TWICE</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Sekiro: Shadows Die Twice[a] is a 2019 action-adventure game developed by FromSoftware. It was
+                    released for
+                    PlayStation 4, Windows, and Xbox One in March 2019 and for Stadia in October 2020 by FromSoftware in
+                    Japan
+                    and Activision internationally. The game follows a shinobi known as Wolf, who attempts to take
+                    revenge on a
+                    samurai clan that imprisoned him and kidnapped his lord. The gameplay is focused on stealth,
+                    exploration,
+                    and combat, with a particular emphasis on boss battles. It takes place in a fictionalized Japan
+                    during the
+                    Sengoku period and makes strong references to Buddhist mythology and philosophy.
+
+                    Lead director Hidetaka Miyazaki wanted to create a new intellectual property (IP) that marked a
+                    departure
+                    from their Dark Souls series, looking at games such as Tenchu for inspiration. Sekiro was praised by
+                    critics, who complimented its gameplay and setting, and compared it to Dark Souls, although opinions
+                    on its
+                    difficulty were mixed. It won several year-end awards and sold over five million copies by July
+                    2020.</p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./sekiro-shadows-die-twice.gif" alt="Demon souls">
+        </div>
+    </div>
+
+
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="elden-ring" class="text-box">
+                <h2>ELDEN RING</h2>
+            </div>
+
+            <div class="text-box-subtitle">
+                <p>Elden Ring[a] is a 2022 action role-playing game developed by FromSoftware. It was directed by
+                    Hidetaka
+                    Miyazaki with worldbuilding provided by fantasy writer George R. R. Martin. It was released for
+                    PlayStation
+                    4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 25 by FromSoftware in Japan and
+                    Bandai
+                    Namco Entertainment internationally. Players control a customizable player character who is on a
+                    quest to
+                    repair the Elden Ring and become the new Elden Lord.
+
+                    Elden Ring is presented through a third-person perspective; players freely roam its interactive open
+                    world.
+                    The six main areas are traversed using the player character's steed Torrent as the primary mode of
+                    travel.
+                    Linear, hidden dungeons can be explored to find useful items. Players can use several types of
+                    weapons and
+                    magic spells, including non-direct engagement enabled by stealth mechanics. Throughout the game's
+                    world,
+                    checkpoints enable fast travel and allow players to improve their attributes using an in-game
+                    currency
+                    called Runes. Elden Ring has an online multiplayer mode in which players can join each other for
+                    cooperative
+                    and player-versus-player combat.
+                </p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./elden-ring-fromsoft.gif" alt="Demon souls">
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
